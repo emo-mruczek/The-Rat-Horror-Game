@@ -6,6 +6,7 @@ extends CharacterBody3D
 const SPEED = 1
 
 var can_move = true
+var in_flashlight_range = false
 
 func _physics_process(delta: float) -> void:
     # Add the gravity.
@@ -33,7 +34,12 @@ func _physics_process(delta: float) -> void:
 
 func stop_in_light():
     can_move = false
+    in_flashlight_range = true
     
 func move_in_dark():
     can_move = true
+    in_flashlight_range = false
     
+func _on_player_flashlight_clicked() -> void:
+    if in_flashlight_range:
+        can_move = not can_move

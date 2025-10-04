@@ -36,7 +36,6 @@ func _physics_process(delta: float) -> void:
     #    velocity.y = JUMP_VELOCITY
 
     if Input.is_action_just_pressed("flashlight"):
-        print("pre signal")
         has_flashlight = not has_flashlight
         flashlight_clicked.emit()
 

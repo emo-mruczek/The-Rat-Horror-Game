@@ -22,3 +22,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4325945, 0)
 
 [node name="Mob" parent="." instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7149622, 0, -1.4081222)
+
+[connection signal="flashlight_clicked" from="Player" to="Mob" method="_on_player_flashlight_clicked"]
