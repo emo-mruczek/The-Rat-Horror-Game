@@ -13,6 +13,9 @@ func _physics_process(delta: float) -> void:
         velocity += get_gravity() * delta
     
     if !can_move:
+        velocity.x = 0
+        velocity.z = 0
+        move_and_slide()
         return
     
     var player: Player = get_tree().get_first_node_in_group("player")

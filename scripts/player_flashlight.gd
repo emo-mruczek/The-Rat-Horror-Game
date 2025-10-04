@@ -9,9 +9,7 @@ func _on_player_flashlight_clicked() -> void:
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-    print("enter")
     if body.is_in_group("mob"):
-        print("is mob")
         var enemy: Mob = body
         enemy.stop_in_light()
 
