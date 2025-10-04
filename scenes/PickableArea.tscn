@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd43o8dcf7qs5"]
+
+[ext_resource type="Script" uid="uid://b2cqmxl1gwu3h" path="res://scenes/pickable_area.gd" id="1_6l1rp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4y27e"]
+height = 1.2944336
+radius = 0.58251953
+
+[node name="PickableArea" type="Area3D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_6l1rp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6286621, 0)
+shape = SubResource("CylinderShape3D_4y27e")

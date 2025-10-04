@@ -23,7 +23,7 @@ func _on_stream_finished(stream: AudioStreamPlayer, loop: bool) -> void:
 func play(sound_path: String, loop: bool = false) -> void:
     queue.append({ "path": sound_path, "loop": loop })
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
     if not queue.is_empty() and not available.is_empty():
         var sound = queue.pop_front()
         available[0].stream = load(sound.path)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcdiuurwvv72p"]
+
+[ext_resource type="Script" uid="uid://ccjilu3lyow5a" path="res://scenes/flashlight_item.gd" id="1_syok7"]
+[ext_resource type="PackedScene" uid="uid://cnlj5k04sexej" path="res://scenes/player_flashlight.tscn" id="2_uyn4k"]
+[ext_resource type="PackedScene" uid="uid://dd43o8dcf7qs5" path="res://scenes/PickableArea.tscn" id="3_d043g"]
+
+[node name="FlashlightItem" type="Node3D"]
+script = ExtResource("1_syok7")
+
+[node name="player-flashlight" parent="." instance=ExtResource("2_uyn4k")]
+
+[node name="PickableArea" parent="." instance=ExtResource("3_d043g")]
