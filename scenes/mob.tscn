@@ -17,6 +17,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56360644, 0)
 shape = SubResource("CapsuleShape3D_bsing")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+gi_lightmap_texel_scale = 2.0
 billboard = 1
 shaded = true
 texture_filter = 0
