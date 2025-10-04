@@ -20,12 +20,13 @@ script = ExtResource("1_k0juu")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.558776, 0)
 
 [node name="Map" parent="." instance=ExtResource("2_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7149622, 0.37766147, -1.4081222)
 
 [node name="Mob" parent="." instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7149622, 0.37766147, -1.4081222)
 
 [connection signal="flashlight_clicked" from="Player" to="Mob" method="_on_player_flashlight_clicked"]
 
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7149622, 0.37766147, -1.4081222)
 
 [node name="FlashlightItem" parent="." instance=ExtResource("4_k0juu")]
 transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, -2.5023954, 0.32931602, 1.1497983)
