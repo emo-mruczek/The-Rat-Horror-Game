@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnlj5k04sexej"]
+[gd_scene load_steps=3 format=3 uid="uid://cnlj5k04sexej"]
 
 [ext_resource type="Script" uid="uid://cql40j7uxsfsy" path="res://scripts/player_flashlight.gd" id="1_qwl78"]
+[ext_resource type="Texture2D" uid="uid://br6wl86y4kwcj" path="res://assets/torch.png" id="2_1edac"]
 
 [node name="player-flashlight" type="Node3D"]
 script = ExtResource("1_qwl78")
@@ -19,6 +20,12 @@ collision_mask = 2
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Area3D"]
 transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 0, -0.2, 0)
 polygon = PackedVector2Array(0, 0, 3, 3, 7, 8, -7, 8, -3, 3)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 0, -0.28357434, 0.41974962)
+modulate = Color(0.63, 0.63, 0.63, 1)
+texture_filter = 0
+texture = ExtResource("2_1edac")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

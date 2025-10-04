@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3w4hnfi7x853"]
+[gd_scene load_steps=4 format=3 uid="uid://cl7t8x3t3ri4u"]
 
 [ext_resource type="Script" uid="uid://bgw2mivrhrlut" path="res://scripts/flashlight.gd" id="1_lkaa1"]
 [ext_resource type="Texture2D" uid="uid://c3qnb61siiwai" path="res://icon.svg" id="2_0ywi5"]
@@ -16,4 +16,5 @@ shape = SubResource("BoxShape3D_gm4ho")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 billboard = 1
+texture_filter = 0
 texture = ExtResource("2_0ywi5")

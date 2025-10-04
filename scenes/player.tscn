@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c3qnb61siiwai" path="res://icon.svg" id="1_a202f"]
 [ext_resource type="Script" uid="uid://dqe54i6jpjr4i" path="res://scripts/player.gd" id="1_noarx"]
-[ext_resource type="PackedScene" path="res://scenes/player_flashlight.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://cnlj5k04sexej" path="res://scenes/player_flashlight.tscn" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a202f"]
 

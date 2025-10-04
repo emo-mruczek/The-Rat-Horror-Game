@@ -18,8 +18,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
     if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
         rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
-        $Camera3D.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
-        $Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(PITCH_MAX_DEGREES), deg_to_rad(PITCH_MAX_DEGREES))
+        #$Camera3D.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
+        #$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(PITCH_MAX_DEGREES), deg_to_rad(PITCH_MAX_DEGREES))
 
 func _physics_process(delta: float) -> void:
     
