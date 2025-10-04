@@ -1,5 +1,7 @@
-extends Control
 class_name InventorySlot
+
+extends Control
+
 
 # So its copy can be instanced while splitting
 @export var inventory_item_scene: PackedScene = preload("res://Inventory/InventorySlot/InventoryItem/InventoryItem.tscn")
@@ -12,7 +14,7 @@ class_name InventorySlot
 
 
 enum InventorySlotAction {
-	SELECT, SPLIT, # FOR ITEM SELECTION
+    SELECT, SPLIT, # FOR ITEM SELECTION
 }
 
 
@@ -22,4 +24,4 @@ signal slot_hovered(which: InventorySlot, is_hovering: bool)
 
 
 func _ready():
-	add_to_group("inventory_slots")
+    add_to_group("inventory_slots")
