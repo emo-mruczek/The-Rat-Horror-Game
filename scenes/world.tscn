@@ -1,39 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccf5nhmbri73q"]
+[gd_scene load_steps=5 format=3 uid="uid://ccf5nhmbri73q"]
 
-[ext_resource type="Texture2D" uid="uid://cliv1iiwsuwtm" path="res://assets/floor.png" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://cpf15arnrq0d6" path="res://scenes/map.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://3ufi30jm6y1x" path="res://scenes/player.tscn" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://c34s8yyvppfdq" path="res://scenes/mob.tscn" id="3_4wyf3"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tlwt5"]
-size = Vector3(10.064209, 0.11828613, 9.980957)
+[sub_resource type="Environment" id="Environment_4wyf3"]
+background_energy_multiplier = 0.0
+ambient_light_source = 1
+ambient_light_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+fog_density = 0.002
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0juu"]
-albedo_texture = ExtResource("2_4wyf3")
-uv1_scale = Vector3(5, 5, 5)
-uv1_triplanar = true
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_k0juu"]
-material = SubResource("StandardMaterial3D_k0juu")
-
-[node name="World" type="Node3D"]
+[node name="World" type="WorldEnvironment"]
+environment = SubResource("Environment_4wyf3")
 
 [node name="Player" parent="." instance=ExtResource("2_fj7yv")]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Map" parent="." instance=ExtResource("2_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4325945, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12365723, 0.44085693, 0.46862793)
-shape = SubResource("BoxShape3D_tlwt5")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D/CollisionShape3D"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-gi_mode = 2
-mesh = SubResource("PlaneMesh_k0juu")
-skeleton = NodePath("../../../..")
 
 [node name="Mob" parent="." instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7149622, 0, -1.4081222)
