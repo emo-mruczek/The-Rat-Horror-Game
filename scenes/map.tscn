@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpf15arnrq0d6"]
+[gd_scene load_steps=8 format=3 uid="uid://dnb118x6xfyio"]
 
 [ext_resource type="Texture2D" uid="uid://cliv1iiwsuwtm" path="res://assets/floor.png" id="1_4xfga"]
 [ext_resource type="Material" uid="uid://d1cfklhcktkbf" path="res://assets/brick_mesh_instance.tres" id="2_paxxb"]
@@ -10,6 +10,7 @@ size = Vector3(10.064209, 0.11828613, 9.980957)
 albedo_texture = ExtResource("1_4xfga")
 uv1_scale = Vector3(5, 5, 5)
 uv1_triplanar = true
+texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k0juu"]
 material = SubResource("StandardMaterial3D_k0juu")
