@@ -39,7 +39,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.056, 2.361, -0.04852
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall"]
-transform = Transform3D(-2.1855695e-07, 5, 0, -5, -2.1855695e-07, 0, 0, 0, 8.333, 0, -0.22819805, -0.06681335)
+transform = Transform3D(-2.1855695e-07, 5, 0, 2.1855695e-07, 9.553427e-15, 8.333, 5, 2.1855695e-07, -3.64247e-07, 0, -0.22819805, -0.06681335)
 mesh = SubResource("PlaneMesh_gldc4")
 
 [node name="Wall2" type="CollisionShape3D" parent="StaticBody3D"]
@@ -47,7 +47,7 @@ transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall2"]
-transform = Transform3D(-2.1855695e-07, 5, 0, -5, -2.1855695e-07, 0, 0, 0, 8.333, 0, -0.22819805, 0)
+transform = Transform3D(-2.1855695e-07, 5, 0, 2.1855695e-07, 9.553427e-15, 8.333, 5, 2.1855695e-07, -3.64247e-07, 0, -0.22819805, 0)
 mesh = SubResource("PlaneMesh_gldc4")
 
 [node name="Wall3" type="CollisionShape3D" parent="StaticBody3D"]
@@ -55,7 +55,7 @@ transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall3"]
-transform = Transform3D(-2.1855695e-07, 5, 0, -5, -2.1855695e-07, 0, 0, 0, 8.333, 0, -0.22819805, 0)
+transform = Transform3D(-2.1855695e-07, 5, 0, 2.1855695e-07, 9.553427e-15, 8.333, 5, 2.1855695e-07, -3.64247e-07, 0, -0.22819805, 0)
 mesh = SubResource("PlaneMesh_gldc4")
 
 [node name="Wall4" type="CollisionShape3D" parent="StaticBody3D"]
@@ -63,5 +63,5 @@ transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall4"]
-transform = Transform3D(-2.1855695e-07, 5, 0, -5, -2.1855695e-07, 0, 0, 0, 8.333, 0, -0.22819805, 0)
+transform = Transform3D(-2.1855695e-07, 5, 0, 2.1855695e-07, 9.553427e-15, 8.333, 5, 2.1855695e-07, -3.64247e-07, 0, -0.22819805, 0)
 mesh = SubResource("PlaneMesh_gldc4")
