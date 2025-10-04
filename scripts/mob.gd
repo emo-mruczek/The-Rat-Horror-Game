@@ -3,7 +3,7 @@ class_name Mob
 extends CharacterBody3D
 
 
-const SPEED = 1
+const SPEED = 3
 
 var can_move = true
 var in_flashlight_range = false
