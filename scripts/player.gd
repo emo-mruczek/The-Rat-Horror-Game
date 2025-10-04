@@ -11,6 +11,7 @@ const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.002
 const PITCH_MAX_DEGREES = 89
+const STEP_DELAY = 0.25
 
 func _ready() -> void:
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -20,6 +21,8 @@ func _input(event: InputEvent) -> void:
         rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
         #$Camera3D.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
         #$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(PITCH_MAX_DEGREES), deg_to_rad(PITCH_MAX_DEGREES))
+
+var step_timer := STEP_DELAY
 
 func _physics_process(delta: float) -> void:
     
@@ -39,6 +42,7 @@ func _physics_process(delta: float) -> void:
         has_flashlight = not has_flashlight
         flashlight_clicked.emit()
 
+
     # Get the input direction and handle the movement/deceleration.
     # As good practice, you should replace UI actions with custom gameplay actions.
     var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -46,6 +50,11 @@ func _physics_process(delta: float) -> void:
     if direction:
         velocity.x = direction.x * SPEED
         velocity.z = direction.z * SPEED
+
+        step_timer -= delta
+        if step_timer <= 0.0:
+            step_timer = STEP_DELAY
+            AudioManager.play("res://assets/step.wav")
     else:
         velocity.x = move_toward(velocity.x, 0, SPEED)
         velocity.z = move_toward(velocity.z, 0, SPEED)
