@@ -23,14 +23,14 @@ collision_mask = 2
 transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 0, -0.2, 0)
 polygon = PackedVector2Array(0, 0, 3, 3, 7, 8, -7, 8, -3, 3)
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
+[node name="FlashlightLight" type="Sprite3D" parent="."]
 transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 0, -0.28357434, 0.41974962)
 layers = 3
 texture_filter = 0
 texture = ExtResource("3_4m33y")
 
-[node name="Sprite3D" type="Sprite3D" parent="Sprite3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, -8.351872e-23, 0, -8.351872e-23, 1, 0, 0, 0)
+[node name="Flashlight" type="Sprite3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 0, -0.28357434, 0.41974962)
 modulate = Color(0.63, 0.63, 0.63, 1)
 texture_filter = 0
 texture = ExtResource("2_1edac")
