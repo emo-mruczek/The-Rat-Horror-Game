@@ -2,13 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://3ufi30jm6y1x" path="res://scenes/player.tscn" id="2_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://cnx4yv310eo3f" path="res://assets/bricks.png" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://c34s8yyvppfdq" path="res://scenes/mob.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" path="res://scenes/mob.tscn" id="3_4wyf3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tlwt5"]
 size = Vector3(9.4453125, 1, 9.043701)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wyf3"]
-shading_mode = 0
 albedo_texture = ExtResource("2_rwgxs")
 uv1_scale = Vector3(5, 1, 5)
 uv1_triplanar = true
@@ -30,6 +29,7 @@ shape = SubResource("BoxShape3D_tlwt5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D/CollisionShape3D"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+gi_mode = 2
 mesh = SubResource("PlaneMesh_k0juu")
 skeleton = NodePath("../../../..")
 

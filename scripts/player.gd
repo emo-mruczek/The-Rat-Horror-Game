@@ -2,6 +2,8 @@ class_name Player
 
 extends CharacterBody3D
 
+@export
+var has_flashlight = true
 
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://63krx2y4tsyi"]
+
+[ext_resource type="Script" uid="uid://cql40j7uxsfsy" path="res://scripts/player_flashlight.gd" id="1_qwl78"]
+
+[node name="player-flashlight" type="Node3D"]
+script = ExtResource("1_qwl78")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+light_energy = 7.0
+spot_range = 10.0
