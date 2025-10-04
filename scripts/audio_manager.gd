@@ -8,7 +8,7 @@ var queue = []
 
 func _ready() -> void:
     for i in num_players:
-        var player = AudioStreamPlayback.new()
+        var player = AudioStreamPlayer.new()
         add_child(player)
         available.append(player)
         player.finished.connect(_on_stream_finished.bind(player))
