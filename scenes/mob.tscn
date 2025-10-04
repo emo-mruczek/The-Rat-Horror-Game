@@ -1,19 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://c34s8yyvppfdq"]
 
-[ext_resource type="Script" uid="uid://dtp2v8kdcaeno" path="res://scenes/mob.gd" id="1_bsing"]
+[ext_resource type="Script" uid="uid://dtp2v8kdcaeno" path="res://scripts/mob.gd" id="1_bsing"]
 [ext_resource type="Texture2D" uid="uid://bn320gnfo6tyt" path="res://assets/rat-front.png" id="2_bsing"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bsing"]
 radius = 0.1953125
-height = 0.390625
+height = 1.460022
 
-[node name="Mob" type="CharacterBody3D"]
+[node name="Mob" type="CharacterBody3D" groups=["mob"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_bsing")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024574459, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["mob"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56360644, 0)
 shape = SubResource("CapsuleShape3D_bsing")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 billboard = 1
+shaded = true
 texture = ExtResource("2_bsing")

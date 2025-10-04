@@ -22,6 +22,11 @@ func _input(event: InputEvent) -> void:
         $Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(PITCH_MAX_DEGREES), deg_to_rad(PITCH_MAX_DEGREES))
 
 func _physics_process(delta: float) -> void:
+    
+    if Input.is_action_pressed("yaw_right"):
+        rotate_y(-2*delta)
+    if Input.is_action_pressed("yaw_left"):
+        rotate_y(2*delta)
     # Add the gravity.
     if not is_on_floor():
         velocity += get_gravity() * delta

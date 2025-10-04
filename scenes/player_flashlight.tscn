@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://63krx2y4tsyi"]
+[gd_scene load_steps=2 format=3 uid="uid://cnlj5k04sexej"]
 
 [ext_resource type="Script" uid="uid://cql40j7uxsfsy" path="res://scripts/player_flashlight.gd" id="1_qwl78"]
 
@@ -7,4 +7,18 @@ script = ExtResource("1_qwl78")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 light_energy = 7.0
-spot_range = 10.0
+spot_range = 8.0
+spot_attenuation = 3.1
+spot_angle = 48.0
+spot_angle_attenuation = 2.6390162
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Area3D"]
+transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 0, -0.2, 0)
+polygon = PackedVector2Array(0, 0, 3, 3, 7, 8, -7, 8, -3, 3)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
