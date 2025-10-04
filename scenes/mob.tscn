@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c34s8yyvppfdq"]
+
+[ext_resource type="Texture2D" uid="uid://c3qnb61siiwai" path="res://icon.svg" id="1_4are2"]
+[ext_resource type="Script" uid="uid://dtp2v8kdcaeno" path="res://scenes/mob.gd" id="1_bsing"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bsing"]
+
+[node name="Mob" type="CharacterBody3D"]
+script = ExtResource("1_bsing")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_bsing")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("1_4are2")
