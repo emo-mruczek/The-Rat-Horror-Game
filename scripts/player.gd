@@ -9,6 +9,17 @@ var has_flashlight = true
 
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
+const MOUSE_SENSITIVITY = 0.002
+const PITCH_MAX_DEGREES = 89
+
+func _ready() -> void:
+    Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _input(event: InputEvent) -> void:
+    if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+        rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
+        $Camera3D.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
+        $Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(PITCH_MAX_DEGREES), deg_to_rad(PITCH_MAX_DEGREES))
 
 func _physics_process(delta: float) -> void:
     # Add the gravity.
