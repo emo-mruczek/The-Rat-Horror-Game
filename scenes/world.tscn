@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccf5nhmbri73q"]
+[gd_scene load_steps=6 format=3 uid="uid://ccf5nhmbri73q"]
 
-[ext_resource type="PackedScene" uid="uid://cpf15arnrq0d6" path="res://scenes/map.tscn" id="2_4wyf3"]
+[ext_resource type="Script" uid="uid://djo7hfk3gnab2" path="res://scripts/world.gd" id="1_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dnb118x6xfyio" path="res://scenes/map.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://3ufi30jm6y1x" path="res://scenes/player.tscn" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://c34s8yyvppfdq" path="res://scenes/mob.tscn" id="3_4wyf3"]
 
@@ -12,6 +13,7 @@ fog_density = 0.002
 
 [node name="World" type="WorldEnvironment"]
 environment = SubResource("Environment_4wyf3")
+script = ExtResource("1_k0juu")
 
 [node name="Player" parent="." instance=ExtResource("2_fj7yv")]
 
