@@ -1,5 +1,9 @@
 extends Node
 
+func _input(event: InputEvent) -> void:
+    if Input.is_action_pressed("flashlight"):
+        $SpotLight3D.visible = not $SpotLight3D.visible
+        AudioManager.play("res://assets/flashlight.wav")
 
 func _on_player_flashlight_clicked() -> void:
     var player = get_tree().get_first_node_in_group("player")
