@@ -9,16 +9,16 @@ func _physics_process(delta: float) -> void:
     if not is_on_floor():
         velocity += get_gravity() * delta
     
-    var targetPosition: Vector3
     
     var player: Player = get_tree().get_first_node_in_group("player")
-    if player != null:
-        targetPosition = player.position
-    else:
-        targetPosition = Vector3(0,0,0)
+    if player == null:
+        return
+
 
     var direction = global_position.direction_to(player.global_position)
-    print("Direction to player:", direction)
+    
+    if global_position.distance_to(player.global_position) < 1:
+        return
     velocity.x = direction.x * SPEED
     velocity.z = direction.z * SPEED
 
