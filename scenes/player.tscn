@@ -22,5 +22,4 @@ shape = SubResource("CapsuleShape3D_a202f")
 [node name="player-flashlight" parent="." instance=ExtResource("3_qhqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.80588204)
 
-[connection signal="flashlight_clicked" from="." to="." method="_on_flashlight_clicked"]
 [connection signal="flashlight_clicked" from="." to="player-flashlight" method="_on_player_flashlight_clicked"]
