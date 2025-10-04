@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnx4yv310eo3f"
-path.s3tc="res://.godot/imported/bricks.png-1d02c8de346f110ce834ab785053b8a3.s3tc.ctex"
+uid="uid://cliv1iiwsuwtm"
+path.s3tc="res://.godot/imported/floor.png-38406586736af2fe805d7b886727ee47.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/bricks.png"
-dest_files=["res://.godot/imported/bricks.png-1d02c8de346f110ce834ab785053b8a3.s3tc.ctex"]
+source_file="res://assets/floor.png"
+dest_files=["res://.godot/imported/floor.png-38406586736af2fe805d7b886727ee47.s3tc.ctex"]
 
 [params]
 
