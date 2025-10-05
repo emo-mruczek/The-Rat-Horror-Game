@@ -28,7 +28,6 @@ func _process(delta: float) -> void:
         atk_played = true
         AudioManager.play("res://assets/ambient_wind.wav", 0)
         
-    print($"Player/jumpscarr".position.z)
     if ($"Player/jumpscarr".position.z < -0.25):
         $"Player/jumpscarr".position.z += delta*2
         $"Player/jumpscarr".rotation.z += delta * -0.3

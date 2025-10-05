@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://5k53vgvqkwng"]
 
-[ext_resource type="Script" uid="uid://b6fv7i4ni0x0u" path="res://key_1.gd" id="1_cr284"]
+[ext_resource type="Script" uid="uid://b6fv7i4ni0x0u" path="res://scripts/key_1.gd" id="1_cr284"]
 [ext_resource type="PackedScene" uid="uid://dd43o8dcf7qs5" path="res://scenes/PickableArea.tscn" id="2_efxak"]
 [ext_resource type="PackedScene" uid="uid://bkerk8kqkbyaj" path="res://scenes/player_key_1.tscn" id="3_efxak"]
 

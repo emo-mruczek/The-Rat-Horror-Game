@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://56om7nx3jckw"]
 
-[ext_resource type="Script" uid="uid://bplbfe1oxcilf" path="res://scenes/flashlight_item.gd" id="1_syok7"]
+[ext_resource type="Script" uid="uid://bplbfe1oxcilf" path="res://scripts/flashlight_item.gd" id="1_syok7"]
 [ext_resource type="PackedScene" uid="uid://cnlj5k04sexej" path="res://scenes/player_flashlight.tscn" id="2_uyn4k"]
 [ext_resource type="PackedScene" uid="uid://dd43o8dcf7qs5" path="res://scenes/PickableArea.tscn" id="3_d043g"]
 

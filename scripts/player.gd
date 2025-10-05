@@ -74,7 +74,6 @@ func try_pick_item(new_name: String) -> bool:
         if i[0] == new_name:
             if new_name == "flashlight":
                 $"player-flashlight/Area3D".monitoring = true
-            print(new_name)
             i[1].set_process(true)
             i[1].show()
             holding_item = i[0]
