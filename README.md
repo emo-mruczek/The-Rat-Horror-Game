@@ -10,3 +10,4 @@ G - drop held item
 
 
 https://cryptpad.fr/doc/#/2/doc/edit/pJhUJEeA9n4FENngI-GALeTG/
+https://cryptpad.fr/presentation/#/3/presentation/edit/09b1894e53d11cd740331c17cbf73c83/embed/
