@@ -168,11 +168,11 @@ transform = Transform3D(-1.6379148e-07, 4.916809, 1.6940659e-21, 1.6379146e-07, 
 mesh = ExtResource("2_paxxb")
 
 [node name="Wall17" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(6.556708e-08, -5.7320566e-15, -1.0776372, -1.3113416e-07, -1.5, 0, -1.5, 1.3113416e-07, -4.710502e-08, 51.7109, 3.7447696, -10.381782)
+transform = Transform3D(6.556708e-08, -5.7320566e-15, -1.5, -1.3113416e-07, -1.5, 0, -1.5, 1.3113416e-07, -6.556708e-08, 51.7109, 3.7447696, -10.381782)
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall17"]
-transform = Transform3D(-1.637915e-07, 4.916809, -5.684342e-14, 1.6379146e-07, -2.842171e-14, 8.194354, 3.7471113, 2.1492056e-07, -3.5818664e-07, -0.05839491, 0, -0.088005066)
+transform = Transform3D(-1.6379151e-07, 4.916809, -1.1368684e-13, 1.6379146e-07, -8.526513e-14, 8.194354, 3.7471113, 2.149206e-07, -3.5818664e-07, -0.023498535, -0.17470002, -1.0448265)
 mesh = ExtResource("2_paxxb")
 
 [node name="Wall2" type="CollisionShape3D" parent="."]
