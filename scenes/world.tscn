@@ -55,6 +55,6 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0396179, -11.583082)
 
 [node name="Mob" parent="." instance=ExtResource("3_4wyf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.859676, 0.37766147, -1.4081222)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0717945, 0.37766147, -11.553573)
 
 [connection signal="flashlight_clicked" from="Player" to="Mob" method="_on_player_flashlight_clicked"]

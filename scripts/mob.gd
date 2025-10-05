@@ -2,11 +2,17 @@ class_name Mob
 
 extends CharacterBody3D
 
-
 const SPEED = 3
+const STEP_DELAY = 0.2
 
 var can_move = true
 var in_flashlight_range = false
+var step_timer = 0
+var audio = AudioStreamPlayer3D.new()
+
+func _ready() -> void:
+    audio.stream = load("res://assets/enemystep.wav")
+    add_child(audio)
 
 func _physics_process(delta: float) -> void:
     # Add the gravity.
@@ -31,6 +37,11 @@ func _physics_process(delta: float) -> void:
     velocity.z = direction.z * SPEED
 
     move_and_slide()
+
+    step_timer -= delta
+    if step_timer <= 0.0:
+        step_timer = STEP_DELAY
+        audio.play()
 
 func stop_in_light():
     can_move = false
