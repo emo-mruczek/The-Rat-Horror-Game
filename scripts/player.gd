@@ -26,6 +26,7 @@ func _input(event: InputEvent) -> void:
 
 var step_timer := STEP_DELAY
 var scratch_timer := SCRATCH_DELAY
+var scratch_amount := 0
 
 func _physics_process(delta: float) -> void:
     
@@ -48,7 +49,11 @@ func _physics_process(delta: float) -> void:
     scratch_timer -= delta
     if scratch_timer <= 0.0:
         scratch_timer = SCRATCH_DELAY
-        if randf() <= SCRATCH_CHANCE:
+        if scratch_amount > 0:
+            scratch_amount -= 1
+            AudioManager.play("res://assets/scratching.wav")
+        elif randf() <= SCRATCH_CHANCE:
+            scratch_amount = randi_range(0, 4)
             AudioManager.play("res://assets/scratching.wav")
 
     # Get the input direction and handle the movement/deceleration.
