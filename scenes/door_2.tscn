@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc15bji05f6m"]
+
+[ext_resource type="Script" uid="uid://bytdxj3dye34y" path="res://scripts/door_2.gd" id="1_fabj8"]
+[ext_resource type="Texture2D" uid="uid://jjx4p47xm2fw" path="res://assets/door.png" id="2_12tgo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cdtvc"]
+radius = 0.6194797
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ajw6c"]
+radius = 1.1227901
+
+[node name="door2" type="Node3D"]
+visible = false
+script = ExtResource("1_fabj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_cdtvc")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_12tgo")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_ajw6c")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
