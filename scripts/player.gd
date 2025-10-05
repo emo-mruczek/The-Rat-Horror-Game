@@ -22,7 +22,7 @@ var scratch_amount := 0
 
 @onready var items = [
     ["flashlight", $"player-flashlight", preload("res://scenes/flashlight_item.tscn")],
-    ["key_1", $"player-key-1", preload("res://scenes/key_1.tscn")]
+    ["key_1", $"player-key-1", preload("res://scenes/key_1.tscn")],
 ]
 func _ready() -> void:
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -51,6 +51,8 @@ func drop_item(old_name: String) -> bool:
             holding_item = ""
             i[1].set_process(false)
             i[1].hide()
+            if old_name == "flashlight":
+                $"player-flashlight/Area3D".monitoring = false
             var pickable_item = i[2].instantiate()
             get_parent().add_child(pickable_item)
             pickable_item.set("position", position)
@@ -65,6 +67,8 @@ func try_pick_item(new_name: String) -> bool:
         return false
     for i in items:
         if i[0] == new_name:
+            if new_name == "flashlight":
+                $"player-flashlight/Area3D".monitoring = true
             print(new_name)
             i[1].set_process(true)
             i[1].show()

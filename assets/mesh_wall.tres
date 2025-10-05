@@ -1,0 +1,6 @@
+[gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://clsea6n8imwpg"]
+
+[ext_resource type="Material" uid="uid://d1cfklhcktkbf" path="res://assets/brick_mesh_instance.tres" id="1_exkeg"]
+
+[resource]
+material = ExtResource("1_exkeg")
