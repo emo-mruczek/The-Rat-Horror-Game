@@ -8,7 +8,7 @@
 size = Vector3(10.064209, 0.11828613, 9.980957)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4xfga"]
-size = Vector3(0.09739685, 4.8515015, 10.412048)
+size = Vector3(0.001, 10, 10.412)
 
 [node name="Node3D" type="Node3D"]
 
@@ -38,7 +38,7 @@ axis = 1
 texture = ExtResource("2_gldc4")
 
 [node name="Wall" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.056, 2.361, -0.04852295)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.056, 3.7133577, -0.04852295)
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall"]
@@ -46,7 +46,7 @@ transform = Transform3D(-2.9505188e-07, 5, 3.64247e-07, 0, -2.1855695e-07, 8.333
 mesh = ExtResource("2_paxxb")
 
 [node name="Wall2" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 5.0150685, 2.361, 0.045418024)
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 5.0150685, 3.7703652, 0.045418024)
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall2"]
@@ -54,7 +54,7 @@ transform = Transform3D(-2.1855698e-07, 5, 0, 2.1855696e-07, 9.553427e-15, 8.333
 mesh = ExtResource("2_paxxb")
 
 [node name="Wall3" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 0.06076622, 2.361, 4.864457)
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 0.06076622, 3.7302544, 4.864457)
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall3"]
@@ -62,9 +62,13 @@ transform = Transform3D(-2.1855698e-07, 5, 0, 2.1855696e-07, 9.553427e-15, 8.333
 mesh = ExtResource("2_paxxb")
 
 [node name="Wall4" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 0.11039829, 2.361, -5.0656643)
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 0.11039829, 3.7447696, -5.0656643)
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall4"]
+<<<<<<< HEAD
 transform = Transform3D(-2.1855696e-07, 5, 0, 2.1855696e-07, 9.553427e-15, 8.333, 5, 2.1855696e-07, -3.6424703e-07, -4.370556, 0, 1.7881393e-07)
+=======
+transform = Transform3D(-2.1855696e-07, 5, 0, 2.1855696e-07, 9.553427e-15, 8.333, 5, 2.1855696e-07, -3.6424703e-07, -0.16149426, 0.8287022, -0.009775475)
+>>>>>>> 8aa20d1 (door)
 mesh = ExtResource("2_paxxb")
