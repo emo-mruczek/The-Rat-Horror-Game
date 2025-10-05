@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c34s8yyvppfdq"]
+[gd_scene load_steps=5 format=3 uid="uid://c34s8yyvppfdq"]
 
 [ext_resource type="Script" uid="uid://dtp2v8kdcaeno" path="res://scripts/mob.gd" id="1_bsing"]
 [ext_resource type="Texture2D" uid="uid://bn320gnfo6tyt" path="res://assets/rat-front.png" id="2_bsing"]
@@ -6,6 +6,9 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bsing"]
 radius = 0.1953125
 height = 1.460022
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bsing"]
+radius = 0.22753906
 
 [node name="Mob" type="CharacterBody3D" groups=["mob"]]
 collision_layer = 3
@@ -22,3 +25,13 @@ billboard = 1
 shaded = true
 texture_filter = 0
 texture = ExtResource("2_bsing")
+
+[node name="Jumpscare range" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jumpscare range"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41764432, 0)
+shape = SubResource("CylinderShape3D_bsing")
+
+[connection signal="body_entered" from="Jumpscare range" to="." method="_on_jumpscare_range_body_entered"]

@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
     # Add the gravity.
     if not is_on_floor():
         velocity += get_gravity() * delta
-    
+        
     if !can_move:
         velocity.x = 0
         velocity.z = 0
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 
     var direction = global_position.direction_to(player.global_position)
     
-    if global_position.distance_to(player.global_position) < 1:
+    if global_position.distance_to(player.global_position) > 15:
         return
     velocity.x = direction.x * SPEED
     velocity.z = direction.z * SPEED
@@ -43,3 +43,8 @@ func move_in_dark():
 func _on_player_flashlight_clicked() -> void:
     if in_flashlight_range:
         can_move = not can_move
+
+
+func _on_jumpscare_range_body_entered(body: Node3D) -> void:
+    if body.is_in_group("player"):
+        get_node("/root/World").jumpscare()
