@@ -1,9 +1,8 @@
 extends Node
 
 func _physics_process(_delta: float) -> void:
-    if $Area3D.monitoring == true:
+    if $SpotLight3D.visible == true:
         $FlashlightLight.visible = true
-        $SpotLight3D.visible = true
     
 func _on_player_flashlight_clicked() -> void:
     $SpotLight3D.visible = not $SpotLight3D.visible
