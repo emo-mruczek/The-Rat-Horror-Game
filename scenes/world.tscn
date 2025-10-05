@@ -1,4 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccf5nhmbri73q"]
+[gd_scene load_steps=12 format=3 uid="uid://ccf5nhmbri73q"]
+
 [ext_resource type="Script" uid="uid://djo7hfk3gnab2" path="res://scripts/world.gd" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dnb118x6xfyio" path="res://scenes/map.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://3ufi30jm6y1x" path="res://scenes/player.tscn" id="2_fj7yv"]
@@ -7,27 +8,47 @@
 [ext_resource type="PackedScene" uid="uid://5k53vgvqkwng" path="res://scenes/key_1.tscn" id="4_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dt7elpyxq4kgy" path="res://scenes/key_2.tscn" id="5_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://dthx1u4wto5l6" path="res://scenes/key_3.tscn" id="5_i7141"]
-[ext_resource type="Script" uid="uid://bgrvcllj0dso2" path="res://key_2.gd" id="6_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dplkliymrxh0y" path="res://scenes/key_4.tscn" id="7_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://voaydmywruxn" path="res://scenes/key_5.tscn" id="9_e3hyu"]
+
 [sub_resource type="Environment" id="Environment_4wyf3"]
-background_energy_multiplier = 0.0ambient_light_source = 1ambient_light_color = Color(0.103743516, 0.10374353, 0.103743516, 1)fog_density = 0.002
-[node name="World" type="WorldEnvironment"]environment = SubResource("Environment_4wyf3")script = ExtResource("1_k0juu")
+background_energy_multiplier = 0.0
+ambient_light_source = 1
+ambient_light_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+fog_density = 0.002
+
+[node name="World" type="WorldEnvironment"]
+environment = SubResource("Environment_4wyf3")
+script = ExtResource("1_k0juu")
+
 [node name="Player" parent="." instance=ExtResource("2_fj7yv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.558776, 0)
+
 [node name="Map" parent="." instance=ExtResource("2_4wyf3")]
+
 [node name="Key1" parent="Map" instance=ExtResource("4_qfnet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3208437, 0.1751442, 1.8532829)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.28112, 0.1751442, -12.39597)
+
 [node name="Key2" parent="Map" instance=ExtResource("5_7r4gi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.133021, 0.76289994)script = ExtResource("6_4mrxx")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.182133, 0.133021, -9.877609)
+
 [node name="Key3" parent="Map" instance=ExtResource("5_i7141")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17660081, -1.5877572)
+visible = false
+
 [node name="Key4" parent="Map" instance=ExtResource("7_w7kh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63887596, 0.22274902, 0)
+visible = false
+
 [node name="Key5" parent="Map" instance=ExtResource("9_e3hyu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2767577, 0.24455109, 0)
+visible = false
+
 [node name="Mob" parent="." instance=ExtResource("3_4wyf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7149622, 0.37766147, -1.4081222)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.859676, 0.37766147, -1.4081222)
+
 [node name="FlashlightItem" parent="." instance=ExtResource("4_k0juu")]
 transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, -2.5023954, 0.32931602, 1.1497983)
+visible = false
+
 [connection signal="flashlight_clicked" from="Player" to="Mob" method="_on_player_flashlight_clicked"]
