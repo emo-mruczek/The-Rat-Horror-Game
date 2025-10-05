@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0rs80pqnu2it"]
+
+[ext_resource type="Script" uid="uid://cn74bi6b48f5s" path="res://scripts/door_1.gd" id="1_j3s2y"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cdtvc"]
+radius = 0.6194797
+
+[sub_resource type="QuadMesh" id="QuadMesh_j3s2y"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ajw6c"]
+radius = 1.1227901
+
+[node name="door1" type="Node3D"]
+script = ExtResource("1_j3s2y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_cdtvc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.8575735, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_j3s2y")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_ajw6c")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
