@@ -68,4 +68,3 @@ shape = SubResource("BoxShape3D_4xfga")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall4"]
 transform = Transform3D(-2.1855696e-07, 5, 0, 2.1855696e-07, 9.553427e-15, 8.333, 5, 2.1855696e-07, -3.6424703e-07, -4.370556, 0, 1.7881393e-07)
 mesh = ExtResource("2_paxxb")
-metadata/_edit_group_ = true

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://be8ofe5j2j6ec"]
+
+[ext_resource type="PlaneMesh" uid="uid://clsea6n8imwpg" path="res://assets/mesh_wall.tres" id="1_4j4n4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4xfga"]
+size = Vector3(0.09739685, 4.8515015, 10.412048)
+
+[node name="Wall4" type="CollisionShape3D"]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_4xfga")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855696e-07, 5, 0, 2.1855696e-07, 9.553427e-15, 8.333, 5, 2.1855696e-07, -3.6424703e-07, -4.370556, 0, 1.7881393e-07)
+mesh = ExtResource("1_4j4n4")
+metadata/_edit_group_ = true
