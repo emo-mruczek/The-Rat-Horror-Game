@@ -1,6 +1,6 @@
 extends Node
 
-const key_id = "key_1"
+const key_id = "key_2"
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
@@ -12,4 +12,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		var player: Player = body
-		print("drzwi1!!!")
+		print("drzwi2!!!")

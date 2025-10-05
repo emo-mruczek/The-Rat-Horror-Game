@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccf5nhmbri73q"]
+[gd_scene load_steps=12 format=3 uid="uid://ccf5nhmbri73q"]
 
 [ext_resource type="Script" uid="uid://djo7hfk3gnab2" path="res://scripts/world.gd" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dnb118x6xfyio" path="res://scenes/map.tscn" id="2_4wyf3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dthx1u4wto5l6" path="res://scenes/key_3.tscn" id="5_i7141"]
 [ext_resource type="PackedScene" uid="uid://dplkliymrxh0y" path="res://scenes/key_4.tscn" id="7_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://voaydmywruxn" path="res://scenes/key_5.tscn" id="9_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://d0rs80pqnu2it" path="res://scenes/door_1.tscn" id="9_q5onr"]
 
 [sub_resource type="Environment" id="Environment_4wyf3"]
 background_energy_multiplier = 0.0
@@ -32,16 +33,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.28112, 0.1751442, -12.3959
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.182133, 0.133021, -9.877609)
 
 [node name="Key3" parent="Map" instance=ExtResource("5_i7141")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17660081, -1.5877572)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17660081, 0.74828446)
 visible = false
 
 [node name="Key4" parent="Map" instance=ExtResource("7_w7kh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63887596, 0.22274902, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7059779, 0.22274902, 0)
 visible = false
 
 [node name="Key5" parent="Map" instance=ExtResource("9_e3hyu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2767577, 0.24455109, 0)
 visible = false
+
+[node name="door1" parent="Map" instance=ExtResource("9_q5onr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0396179, -11.583082)
 
 [node name="Mob" parent="." instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.859676, 0.37766147, -1.4081222)

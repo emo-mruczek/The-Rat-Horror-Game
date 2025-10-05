@@ -1,11 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0rs80pqnu2it"]
 
 [ext_resource type="Script" uid="uid://cn74bi6b48f5s" path="res://scripts/door_1.gd" id="1_j3s2y"]
+[ext_resource type="Texture2D" uid="uid://jjx4p47xm2fw" path="res://assets/door.png" id="2_ajw6c"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cdtvc"]
 radius = 0.6194797
-
-[sub_resource type="QuadMesh" id="QuadMesh_j3s2y"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ajw6c"]
 radius = 1.1227901
@@ -18,9 +17,9 @@ script = ExtResource("1_j3s2y")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("SphereShape3D_cdtvc")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1.8575735, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("QuadMesh_j3s2y")
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+modulate = Color(0.15766826, 0.48315573, 0.117538385, 1)
+texture = ExtResource("2_ajw6c")
 
 [node name="Area3D" type="Area3D" parent="."]
 
