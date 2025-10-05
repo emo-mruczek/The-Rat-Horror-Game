@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwwlbesnwskbn"]
+
+[ext_resource type="Texture2D" uid="uid://cr6xm364317fh" path="res://assets/key1.png" id="1_ow102"]
+
+[node name="PlayerKey4" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+gi_mode = 2
+modulate = Color(0.77057666, 0.00020599962, 0.6957657, 1)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_ow102")

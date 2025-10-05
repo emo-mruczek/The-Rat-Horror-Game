@@ -9,37 +9,37 @@ var can_move = true
 var in_flashlight_range = false
 
 func _physics_process(delta: float) -> void:
-    # Add the gravity.
-    if not is_on_floor():
-        velocity += get_gravity() * delta
-    
-    if !can_move:
-        velocity.x = 0
-        velocity.z = 0
-        move_and_slide()
-        return
-    
-    var player: Player = get_tree().get_first_node_in_group("player")
-    if player == null:
-        return
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
+	if !can_move:
+		velocity.x = 0
+		velocity.z = 0
+		move_and_slide()
+		return
+	
+	var player: Player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		return
 
-    var direction = global_position.direction_to(player.global_position)
-    
-    if global_position.distance_to(player.global_position) < 1:
-        return
-    velocity.x = direction.x * SPEED
-    velocity.z = direction.z * SPEED
+	var direction = global_position.direction_to(player.global_position)
+	
+	if global_position.distance_to(player.global_position) < 1:
+		return
+	velocity.x = direction.x * SPEED
+	velocity.z = direction.z * SPEED
 
-    move_and_slide()
+	move_and_slide()
 
 func stop_in_light():
-    can_move = false
-    in_flashlight_range = true
-    
+	can_move = false
+	in_flashlight_range = true
+	
 func move_in_dark():
-    can_move = true
-    in_flashlight_range = false
-    
+	can_move = true
+	in_flashlight_range = false
+	
 func _on_player_flashlight_clicked() -> void:
-    if in_flashlight_range:
-        can_move = not can_move
+	if in_flashlight_range:
+		can_move = not can_move

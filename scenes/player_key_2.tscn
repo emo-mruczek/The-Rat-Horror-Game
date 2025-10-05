@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl0tc0smhm0yv"]
+
+[ext_resource type="Texture2D" uid="uid://cr6xm364317fh" path="res://assets/key1.png" id="1_g4mcr"]
+
+[node name="PlayerKey2" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+modulate = Color(0.7842978, 0, 0.12388303, 1)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_g4mcr")

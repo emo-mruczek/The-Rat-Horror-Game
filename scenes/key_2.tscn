@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt7elpyxq4kgy"]
+
+[ext_resource type="Script" uid="uid://bgrvcllj0dso2" path="res://key_2.gd" id="1_rw2p5"]
+[ext_resource type="PackedScene" uid="uid://dd43o8dcf7qs5" path="res://scenes/PickableArea.tscn" id="2_2ps5r"]
+[ext_resource type="PackedScene" uid="uid://bl0tc0smhm0yv" path="res://scenes/player_key_2.tscn" id="3_2ps5r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cr284"]
+size = Vector3(0.22424316, 0.15625, 0.21801758)
+
+[node name="Key2" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_rw2p5")
+signal_name = "key_2"
+
+[node name="PickableArea" parent="." instance=ExtResource("2_2ps5r")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020141602, 0.0009765625, 0.0007326603)
+shape = SubResource("BoxShape3D_cr284")
+
+[node name="PlayerKey2" parent="." instance=ExtResource("3_2ps5r")]
