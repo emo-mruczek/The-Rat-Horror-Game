@@ -18,6 +18,7 @@ script = ExtResource("1_j3s2y")
 shape = SubResource("SphereShape3D_cdtvc")
 
 [node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 modulate = Color(0.15766826, 0.48315573, 0.117538385, 1)
 texture = ExtResource("2_ajw6c")
 
