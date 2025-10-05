@@ -10,3 +10,4 @@ texture_filter = 0
 
 [resource]
 material = SubResource("StandardMaterial3D_k0juu")
+size = Vector2(10, 10)
