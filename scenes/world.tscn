@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccf5nhmbri73q"]
+[gd_scene load_steps=14 format=3 uid="uid://ccf5nhmbri73q"]
 
 [ext_resource type="Script" uid="uid://djo7hfk3gnab2" path="res://scripts/world.gd" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dnb118x6xfyio" path="res://scenes/map.tscn" id="2_4wyf3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://5k53vgvqkwng" path="res://scenes/key_1.tscn" id="4_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dt7elpyxq4kgy" path="res://scenes/key_2.tscn" id="5_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://dthx1u4wto5l6" path="res://scenes/key_3.tscn" id="5_i7141"]
+[ext_resource type="PackedScene" uid="uid://dc15bji05f6m" path="res://scenes/door_2.tscn" id="5_q5onr"]
 [ext_resource type="PackedScene" uid="uid://dplkliymrxh0y" path="res://scenes/key_4.tscn" id="7_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://voaydmywruxn" path="res://scenes/key_5.tscn" id="9_e3hyu"]
 [ext_resource type="PackedScene" uid="uid://d0rs80pqnu2it" path="res://scenes/door_1.tscn" id="9_q5onr"]
@@ -33,11 +34,14 @@ texture = ExtResource("3_e3hyu")
 
 [node name="Map" parent="." instance=ExtResource("2_4wyf3")]
 
+[node name="door2" parent="Map" instance=ExtResource("5_q5onr")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.230681, 1.0149645, -6.787685)
+
 [node name="Key1" parent="Map" instance=ExtResource("4_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.28112, 0.1751442, -12.39597)
 
 [node name="Key2" parent="Map" instance=ExtResource("5_7r4gi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.182133, 0.133021, -9.877609)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.021433, 0.133021, -9.877609)
 
 [node name="Key3" parent="Map" instance=ExtResource("5_i7141")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17660081, 0.74828446)

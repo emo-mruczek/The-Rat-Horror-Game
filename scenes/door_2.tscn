@@ -10,7 +10,6 @@ radius = 0.6194797
 radius = 1.1227901
 
 [node name="door2" type="Node3D"]
-visible = false
 script = ExtResource("1_fabj8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -19,8 +18,9 @@ script = ExtResource("1_fabj8")
 shape = SubResource("SphereShape3D_cdtvc")
 
 [node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 modulate = Color(1, 0, 0, 1)
+texture_filter = 0
 texture = ExtResource("2_12tgo")
 
 [node name="Area3D" type="Area3D" parent="."]
