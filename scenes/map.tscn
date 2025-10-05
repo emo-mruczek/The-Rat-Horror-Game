@@ -109,7 +109,7 @@ size = Vector3(0.001, 12, 8)
 [sub_resource type="PlaneMesh" id="PlaneMesh_c00ee"]
 lightmap_size_hint = Vector2i(12, 12)
 material = ExtResource("2_paxxb")
-size = Vector2(8, 12)
+size = Vector2(7.5, 12)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p7tei"]
 size = Vector3(0.001, 12, 8)
