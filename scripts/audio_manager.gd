@@ -1,6 +1,6 @@
 extends Node
 
-var num_players = 8
+var num_players = 16
 var bus = "master"
 
 var infinite_loops: Array[Dictionary] = []
@@ -16,8 +16,14 @@ func _ready() -> void:
         
         player.bus = bus
 
-func _on_stream_finished(stream: AudioStreamPlayer) -> void:
+func _on_stream_finished(stream: AudioStreamPlayer, sound: Dictionary, finite: bool) -> void:
     available.append(stream)
+    if finite:
+        sound.times -= 1
+        if sound.times > 0:
+            finite_loops.append(sound)
+    else:
+        infinite_loops.append(sound)
 
 # if times is 0 the loop is infinite
 func play(sound_path: String, times: int = 1, delay: float = 0.0) -> void:
@@ -35,10 +41,10 @@ func play(sound_path: String, times: int = 1, delay: float = 0.0) -> void:
             "timer": 0,
         })
         
-func _play_sound(sound_path: String) -> void:
+func _play_sound(sound: Dictionary, finite: bool) -> void:
     if not available.is_empty():
-        available[0].stream = load(sound_path)
-        available[0].finished.connect(_on_stream_finished.bind(available[0]))
+        available[0].stream = load(sound.path)
+        available[0].finished.connect(_on_stream_finished.bind(available[0], sound, finite))
         available[0].play()
         available.pop_front()    
 
@@ -47,20 +53,14 @@ func _process(delta: float) -> void:
         sound.timer -= delta
         if sound.timer <= 0.0:
             sound.timer = sound.delay
-            _play_sound(sound.path)
+            _play_sound(sound, false)
+    
+    infinite_loops.clear()
 
-    var remove_indices := []
-    for i in finite_loops.size():
-        var sound := finite_loops[i]
+    for sound in finite_loops:
         sound.timer -= delta
         if sound.timer <= 0.0:
             sound.timer = sound.delay
-            _play_sound(sound.path)
-            sound.times -= 1
-            if sound.times <= 0:
-                remove_indices.push_back(i)
+            _play_sound(sound, true)
                 
-    remove_indices.sort()
-    remove_indices.reverse()
-    for i in remove_indices:
-        finite_loops.remove_at(i)
+    finite_loops.clear()

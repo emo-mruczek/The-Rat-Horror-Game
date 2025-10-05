@@ -12,6 +12,8 @@ const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.002
 const PITCH_MAX_DEGREES = 89
 const STEP_DELAY = 0.25
+const SCRATCH_DELAY = 0.4
+const SCRATCH_CHANCE = 0.05
 
 func _ready() -> void:
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -23,6 +25,7 @@ func _input(event: InputEvent) -> void:
         #$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(PITCH_MAX_DEGREES), deg_to_rad(PITCH_MAX_DEGREES))
 
 var step_timer := STEP_DELAY
+var scratch_timer := SCRATCH_DELAY
 
 func _physics_process(delta: float) -> void:
     
@@ -42,6 +45,11 @@ func _physics_process(delta: float) -> void:
         has_flashlight = not has_flashlight
         flashlight_clicked.emit()
 
+    scratch_timer -= delta
+    if scratch_timer <= 0.0:
+        scratch_timer = SCRATCH_DELAY
+        if randf() <= SCRATCH_CHANCE:
+            AudioManager.play("res://assets/scratching.wav")
 
     # Get the input direction and handle the movement/deceleration.
     # As good practice, you should replace UI actions with custom gameplay actions.
