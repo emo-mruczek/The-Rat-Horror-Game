@@ -17,6 +17,7 @@ func _ready() -> void:
         player.bus = bus
 
 func _on_stream_finished(stream: AudioStreamPlayer, sound: Dictionary, finite: bool) -> void:
+    stream.finished.disconnect(_on_stream_finished)
     available.append(stream)
     if finite:
         sound.times -= 1
