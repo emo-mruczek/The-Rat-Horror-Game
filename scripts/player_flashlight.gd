@@ -1,6 +1,8 @@
 extends Node
 
-
+func _physics_process(_delta: float) -> void:
+    pass
+    
 func _on_player_flashlight_clicked() -> void:
     $SpotLight3D.visible = not $SpotLight3D.visible
     $FlashlightLight.visible = not $FlashlightLight.visible

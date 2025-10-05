@@ -13,6 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
+    return
     var bodies: Array[Node3D] = $ReachArea.get_overlapping_bodies()
     if bodies.size() > 0:
         $Label3D.visible = true

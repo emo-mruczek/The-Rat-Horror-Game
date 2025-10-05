@@ -1,14 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://3ufi30jm6y1x"]
+[gd_scene load_steps=6 format=3 uid="uid://3ufi30jm6y1x"]
 
 [ext_resource type="Texture2D" uid="uid://c3qnb61siiwai" path="res://icon.svg" id="1_a202f"]
 [ext_resource type="Script" uid="uid://dqe54i6jpjr4i" path="res://scripts/player.gd" id="1_noarx"]
 [ext_resource type="PackedScene" uid="uid://cnlj5k04sexej" path="res://scenes/player_flashlight.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://bkerk8kqkbyaj" path="res://scenes/player_key_1.tscn" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a202f"]
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_noarx")
+
+[node name="player-key-1" parent="." instance=ExtResource("4_dqkch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2737468, -0.5156116)
+visible = false
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture = ExtResource("1_a202f")
@@ -21,5 +28,8 @@ shape = SubResource("CapsuleShape3D_a202f")
 
 [node name="player-flashlight" parent="." instance=ExtResource("3_qhqgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.80588204)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="flashlight_clicked" from="." to="player-flashlight" method="_on_player_flashlight_clicked"]

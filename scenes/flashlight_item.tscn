@@ -1,12 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://56om7nx3jckw"]
+[gd_scene load_steps=5 format=3 uid="uid://56om7nx3jckw"]
 
-[ext_resource type="Script" path="res://scenes/flashlight_item.gd" id="1_syok7"]
+[ext_resource type="Script" uid="uid://bplbfe1oxcilf" path="res://scenes/flashlight_item.gd" id="1_syok7"]
 [ext_resource type="PackedScene" uid="uid://cnlj5k04sexej" path="res://scenes/player_flashlight.tscn" id="2_uyn4k"]
-[ext_resource type="PackedScene" path="res://scenes/PickableArea.tscn" id="3_d043g"]
+[ext_resource type="PackedScene" uid="uid://dd43o8dcf7qs5" path="res://scenes/PickableArea.tscn" id="3_d043g"]
 
-[node name="FlashlightItem" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_d043g"]
+size = Vector3(0.18041992, 0.014038086, 0.3729248)
+
+[node name="FlashlightItem" type="RigidBody3D"]
+disable_mode = 1
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_syok7")
+signal_name = "flashlight"
 
 [node name="player-flashlight" parent="." instance=ExtResource("2_uyn4k")]
 
 [node name="PickableArea" parent="." instance=ExtResource("3_d043g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0037841797, -0.28094482, 0.4126587)
+shape = SubResource("BoxShape3D_d043g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dd43o8dcf7qs5"]
 
-[ext_resource type="Script" uid="uid://b2cqmxl1gwu3h" path="res://scenes/pickable_area.gd" id="1_6l1rp"]
+[ext_resource type="Script" uid="uid://b2cqmxl1gwu3h" path="res://pickable_area.gd" id="1_6l1rp"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4y27e"]
 height = 1.2944336

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnlj5k04sexej"]
+[gd_scene load_steps=5 format=3 uid="uid://cnlj5k04sexej"]
 
 [ext_resource type="Script" uid="uid://cql40j7uxsfsy" path="res://scripts/player_flashlight.gd" id="1_qwl78"]
 [ext_resource type="Texture2D" uid="uid://br6wl86y4kwcj" path="res://assets/torch.png" id="2_1edac"]
+[ext_resource type="Script" uid="uid://d1nmyewqjoj3m" path="res://scripts/flashlight_area.gd" id="2_j8sqe"]
 [ext_resource type="Texture2D" uid="uid://cr0tjs1iilhjt" path="res://assets/light.png" id="3_4m33y"]
 
 [node name="player-flashlight" type="Node3D"]
@@ -18,6 +19,7 @@ spot_angle_attenuation = 1.1486957
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("2_j8sqe")
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Area3D"]
 transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 0, -0.2, 0)
