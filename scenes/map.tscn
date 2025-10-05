@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnb118x6xfyio"]
+[gd_scene load_steps=6 format=3 uid="uid://dnb118x6xfyio"]
 
 [ext_resource type="PlaneMesh" uid="uid://d38oe0oiuqr3a" path="res://scenes/mesh_floor.tres" id="1_paxxb"]
+[ext_resource type="Texture2D" uid="uid://bcqwrfou3d3xf" path="res://assets/map_layout.png" id="2_gldc4"]
 [ext_resource type="PlaneMesh" uid="uid://clsea6n8imwpg" path="res://assets/mesh_wall.tres" id="2_paxxb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tlwt5"]
@@ -25,12 +26,23 @@ gi_mode = 2
 mesh = ExtResource("1_paxxb")
 skeleton = NodePath("../../../..")
 
+[node name="map" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_tlwt5")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D/map"]
+transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 41.507286, 0.08245516, -13.220645)
+modulate = Color(1, 1, 1, 0.2901961)
+pixel_size = 0.05
+axis = 1
+texture = ExtResource("2_gldc4")
+
 [node name="Wall" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.056, 2.361, -0.04852295)
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall"]
-transform = Transform3D(-2.1855695e-07, 5, 3.64247e-07, 0, -2.1855695e-07, 8.333, 5, 2.1855695e-07, 1.5921743e-14, -0.15, 0, 0)
+transform = Transform3D(-2.9505188e-07, 5, 3.64247e-07, 0, -2.1855695e-07, 8.333, 6.75, 2.1855695e-07, 1.5921743e-14, 1.5519502, 0, -1.3333334)
 mesh = ExtResource("2_paxxb")
 
 [node name="Wall2" type="CollisionShape3D" parent="StaticBody3D"]
@@ -38,7 +50,7 @@ transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall2"]
-transform = Transform3D(-2.1855695e-07, 5, 0, 2.1855695e-07, 9.553427e-15, 8.333, 5, 2.1855695e-07, -3.64247e-07, -0.15, 0, 0)
+transform = Transform3D(-2.1855698e-07, 5, 0, 2.1855696e-07, 9.553427e-15, 8.333, 5, 2.1855698e-07, -3.6424703e-07, 1.1473782, 0, 1.1175871e-07)
 mesh = ExtResource("2_paxxb")
 
 [node name="Wall3" type="CollisionShape3D" parent="StaticBody3D"]
@@ -46,7 +58,7 @@ transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall3"]
-transform = Transform3D(-2.1855695e-07, 5, 0, 2.1855695e-07, 9.553427e-15, 8.333, 5, 2.1855695e-07, -3.64247e-07, -0.15, 0, 0)
+transform = Transform3D(-2.1855698e-07, 5, 0, 2.1855696e-07, 9.553427e-15, 8.333, 5, 2.1855698e-07, -3.6424703e-07, -1.5883317, 0, -6.3329935e-08)
 mesh = ExtResource("2_paxxb")
 
 [node name="Wall4" type="CollisionShape3D" parent="StaticBody3D"]
@@ -54,5 +66,6 @@ transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08
 shape = SubResource("BoxShape3D_4xfga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/Wall4"]
-transform = Transform3D(-2.1855695e-07, 5, 0, 2.1855695e-07, 9.553427e-15, 8.333, 5, 2.1855695e-07, -3.64247e-07, -0.15, 0, 0)
+transform = Transform3D(-2.1855696e-07, 5, 0, 2.1855696e-07, 9.553427e-15, 8.333, 5, 2.1855696e-07, -3.6424703e-07, -4.370556, 0, 1.7881393e-07)
 mesh = ExtResource("2_paxxb")
+metadata/_edit_group_ = true

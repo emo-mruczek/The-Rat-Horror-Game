@@ -3,4 +3,5 @@
 [ext_resource type="Material" uid="uid://d1cfklhcktkbf" path="res://assets/brick_mesh_instance.tres" id="1_exkeg"]
 
 [resource]
+lightmap_size_hint = Vector2i(12, 12)
 material = ExtResource("1_exkeg")
