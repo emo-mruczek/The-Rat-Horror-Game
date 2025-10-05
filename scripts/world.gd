@@ -8,6 +8,7 @@ func _ready() -> void:
 func jumpscare():
     $"Player".process_mode = Node.PROCESS_MODE_DISABLED
     $"Player/jumpscarr".visible = true
+    AudioManager.play("res://assets/death.wav")
 
 func _process(delta: float) -> void:
     if ($"Player/jumpscarr".visible != true):
